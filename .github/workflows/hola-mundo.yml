@@ -1,0 +1,16 @@
+name: Run Swift Script
+
+on: [push]
+
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Swift version
+        run: swift --version
+
+      - name: Run script
+        run: swift hello.swift
