@@ -3,10 +3,10 @@ run-name: Playing with triggers
 
 on: 
   push:
-    branches: [aprendiendo-github-action]
-  pull_request: 
-    branches: [aprendiendo-github-action]
-  workflow_dispatch: 
+    branches: [aprendiendo-github-actions]
+  pull_request:
+    branches: [aprendiendo-github-actions]
+  workflow_dispatch:
       
 jobs:
 
