@@ -1,0 +1,32 @@
+name: Using Contexts
+run-name: Running with Contexts
+
+
+on:
+  push:
+    branches: [ aprendiendo-github-actions ]
+  pull_request:
+    branches: [ aprendiendo-github-actions ]
+
+jobs:
+
+  run-on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only on push
+        run: echo "This runs on push"
+
+  run-on-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only on PR
+        run: echo "This runs on pull request"
+
+  run-manually:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only when manually triggered
+        run: echo "This runs manually"
