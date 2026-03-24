@@ -1,0 +1,36 @@
+name: Learning Triggers
+run-name: Playing with triggers
+
+on: 
+  push:
+    branches: [aprendiendo-github-action]
+  pull_request: 
+    branches: [aprendiendo-github-action]
+  workflow_dispatch: 
+      
+jobs:
+
+  run-on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only on push
+        run: echo "This runs on push"
+
+  run-on-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only on PR
+        run: echo "This runs on pull request"
+
+  run-manually:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only when manually triggered
+        run: echo "This runs manually"
+
+  
+  
+
