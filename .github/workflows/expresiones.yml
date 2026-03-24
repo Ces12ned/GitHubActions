@@ -1,0 +1,42 @@
+name: Expressions
+run-name: Learning expressions
+
+on:
+  workflow_dispatch:
+    inputs: 
+        xValue:
+            description: 'First value'
+            required: true
+            type: integer 
+        yValue:
+            description: 'Second value'
+            required: true
+            type: integer
+
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Checkout code
+            uses: actions/checkout@v2
+    
+        - name: Run expressions
+            run: |
+            echo "Running Expression 1"
+            x= inputs.xValue
+            y= inputs.yValue
+            result=$((x + y))
+            echo "Result of Expression 1: $result"
+    
+            echo "Running Expression 2"
+            a= inputs.xValue + 10
+            b= inputs.yValue + 5
+            result=$((a / b))
+            echo "Result of Expression 2: $result"
+    
+            echo "Running Expression 3"
+            m= inputs.yValue * 2
+            n= inputs.xValue / 2
+            result=$((m * n))
+            echo "Result of Expression 3: $result"
