@@ -1,5 +1,5 @@
 name: Run Swift Script
-
+run-name: My first Swift GitHub Action
 on: [push]
 
 jobs:
