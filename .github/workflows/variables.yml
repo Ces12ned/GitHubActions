@@ -1,0 +1,15 @@
+name: Local variables 
+run-name: Using local variables
+
+on: 
+    push: 
+
+env:
+    USERNAME: "Ces12ned"
+
+jobs: 
+    local-variable:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Print the username
+              run: echo "The username is $USERNAME"
